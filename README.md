@@ -62,9 +62,9 @@ async function async_error(msg: string) {
 }
 ```
 
-### Solution
+## Solution
 async-await-jasmine uses [zone.js](https://github.com/angular/zone.js/).
 
 zone.js can handle async error even if code is in zone. 
 so when assetion code throw exception, async-await-jasmine automatically call fail and done metod.
-Then we need not wait timeout and we get error message;
+Then we need not wait timeout and we get error message.
