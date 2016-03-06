@@ -9,25 +9,25 @@ async-await-jasmine is utility for jasmine with async await.
    
 ### Sample Code
 ```typescript
-        import {$it} from "async-await-jasmine";
+import {$it} from "async-await-jasmine";
 
-        describe("async-test", () => {
+describe("async-test", () => {
 
-            $it("in zone", async () => {
-                await async_log("Hellow");
-                await async_error("Hell");
-            });
+    $it("in zone", async () => {
+        await async_log("Hellow");
+        await async_error("Hell");
+    });
 
-        });
+});
 
-        async function async_log(msg: string) {
-            console.log("[async] " + msg);
-        }
+async function async_log(msg: string) {
+    console.log("[async] " + msg);
+}
 
-        async function async_error(msg: string) {
-            await async_log("[async] " + msg);
-            throw new Error(msg);
-        }
+async function async_error(msg: string) {
+    await async_log("[async] " + msg);
+    throw new Error(msg);
+}
 ```
 
 
@@ -40,26 +40,26 @@ And we must wait timeout and we get no error message.
 
 ### Problem Code
 ```typescript
-        describe("async-test", () => {
+describe("async-test", () => {
 
-            it("out of zone", async (done) => {
-                await async_log("Hellow");
-                await async_error("Hell");
-                // don't call this method when promise is rejected
-                done();
-            }, 1000);
+    it("out of zone", async (done) => {
+        await async_log("Hellow");
+        await async_error("Hell");
+        // don't call this method when promise is rejected
+        done();
+    }, 1000);
 
-        });
+});
 
-        async function async_log(msg: string) {
-            console.log("[async] " + msg);
-        }
+async function async_log(msg: string) {
+    console.log("[async] " + msg);
+}
 
-        async function async_error(msg: string) {
-            await async_log(msg);
-            // Promise is rejected 
-            throw new Error(msg);
-        }
+async function async_error(msg: string) {
+    await async_log(msg);
+    // Promise is rejected 
+    throw new Error(msg);
+}
 ```
 
 ### Solution
