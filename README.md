@@ -2,7 +2,7 @@
 
 async-await-jasmine is utility for jasmine with async await.
 
-## Installtion
+## Installation
 
     npm install async-await-jasmine
    
