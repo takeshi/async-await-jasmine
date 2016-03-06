@@ -1,6 +1,6 @@
 {
     "name": "async-await-jasmine",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "jasmine utility for async await ",
     "main": "dist/src/async-await-jasmine.js",
     "directories": {

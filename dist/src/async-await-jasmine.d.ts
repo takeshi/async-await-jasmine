@@ -1,4 +1,3 @@
-/// <reference path="../../typings/tsd.d.ts" />
 export declare function $beforeEach(action: () => Promise<void>, timeout?: number): void;
 export declare function $beforeAll(action: () => Promise<void>, timeout?: number): void;
 export declare function $afterEach(action: () => Promise<void>, timeout?: number): void;
