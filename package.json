@@ -1,0 +1,27 @@
+{
+    "name": "async-await-jasmine",
+    "version": "0.1.0",
+    "description": "jasmine utility for async await ",
+    "main": "dist/src/async-await-jasmine-js",
+    "directories": {
+        "example": "examples"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "jasmine",
+        "async",
+        "await",
+        "zone.js"
+    ],
+    "author": "takeshi.kondo@gmail.com",
+    "license": "ISC",
+    "typings": "dist/src/async-await-jasmine.js.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/takeshi/async-await-jasmine"
+    }
+}
