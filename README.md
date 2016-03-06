@@ -4,10 +4,10 @@ async-await-jasmine is utility for jasmine with async await.
 
 ## Installtion
 
-   npm install async-await-jasmine
+    npm install async-await-jasmine
    
    
-## Sample Code
+### Sample Code
 
         import {$it} from "async-await-jasmine";
 
@@ -63,6 +63,7 @@ And we must wait timeout and we get no error message.
 
 ### Solution
 async-await-jasmine uses [zone.js](https://github.com/angular/zone.js/).
+
 zone.js can handle async error even if code is in zone. 
 so when assetion code throw exception, async-await-jasmine automatically call fail and done metod.
 Then we need not wait timeout and we get error message;
