@@ -8,7 +8,7 @@ async-await-jasmine is utility for jasmine with async await.
    
    
 ### Sample Code
-
+```typescript
         import {$it} from "async-await-jasmine";
 
         describe("async-test", () => {
@@ -28,7 +28,7 @@ async-await-jasmine is utility for jasmine with async await.
             await async_log("[async] " + msg);
             throw new Error(msg);
         }
-
+```
 
 
 ## Motivation
@@ -39,7 +39,7 @@ So it don't call done method.
 And we must wait timeout and we get no error message.
 
 ### Problem Code
-
+```typescript
         describe("async-test", () => {
 
             it("out of zone", async (done) => {
@@ -60,6 +60,7 @@ And we must wait timeout and we get no error message.
             // Promise is rejected 
             throw new Error(msg);
         }
+```
 
 ### Solution
 async-await-jasmine uses [zone.js](https://github.com/angular/zone.js/).
