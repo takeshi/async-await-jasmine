@@ -1,30 +1,30 @@
 {
-  "name": "async-await-jasmine",
-  "version": "0.0.0-beta",
-  "description": "jasmine utility for async await ",
-  "main": "dist/src/async-await-jasmine-js",
-  "directories": {
-    "example": "examples"
-  },
-  "dependencies": {
-    "jasmine": "^2.4.1",
-    "zone.js": "^0.6.2"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "jasmine",
-    "async",
-    "await",
-    "zone.js"
-  ],
-  "author": "takeshi.kondo@gmail.com",
-  "license": "ISC",
-  "typings": "dist/src/async-await-jasmine.js.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/takeshi/async-await-jasmine"
-  }
+    "name": "async-await-jasmine",
+    "version": "0.0.0-beta",
+    "description": "jasmine utility for async await ",
+    "main": "dist/src/async-await-jasmine.js",
+    "directories": {
+        "example": "examples"
+    },
+    "dependencies": {
+        "jasmine": "^2.4.1",
+        "zone.js": "^0.6.2"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "jasmine",
+        "async",
+        "await",
+        "zone.js"
+    ],
+    "author": "takeshi.kondo@gmail.com",
+    "license": "ISC",
+    "typings": "dist/src/async-await-jasmine.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/takeshi/async-await-jasmine"
+    }
 }
