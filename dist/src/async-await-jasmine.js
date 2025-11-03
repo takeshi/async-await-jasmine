@@ -75,17 +75,17 @@ function $beforeEach(action, timeout) {
 }
 function $beforeAll(action, timeout) {
     beforeAll(function (done) {
-        inZone(done, "beforeEach", action);
+        inZone(done, "beforeAll", action);
     }, timeout);
 }
 function $afterEach(action, timeout) {
     afterEach(function (done) {
-        inZone(done, "beforeEach", action);
+        inZone(done, "afterEach", action);
     }, timeout);
 }
 function $afterAll(action, timeout) {
     afterAll(function (done) {
-        inZone(done, "beforeEach", action);
+        inZone(done, "afterAll", action);
     }, timeout);
 }
 function $it(expectation, assertion, timeout) {

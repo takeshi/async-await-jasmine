@@ -29,20 +29,20 @@ export function $beforeEach(action: () => Promise<void>, timeout?: number) {
 
 export function $beforeAll(action: () => Promise<void>, timeout?: number) {
     beforeAll(function (done) {
-        inZone(done, "beforeEach", action);
+        inZone(done, "beforeAll", action);
     }, timeout);
 }
 
 
 export function $afterEach(action: () => Promise<void>, timeout?: number) {
     afterEach(function (done) {
-        inZone(done, "beforeEach", action);
+        inZone(done, "afterEach", action);
     }, timeout);
 }
 
 export function $afterAll(action: () => Promise<void>, timeout?: number) {
     afterAll(function (done) {
-        inZone(done, "beforeEach", action);
+        inZone(done, "afterAll", action);
     }, timeout);
 }
 
