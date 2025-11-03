@@ -53,19 +53,20 @@ function createZone(zoneName, done) {
     });
 }
 function inZone(done, zoneName, action) {
-    var _this = this;
-    createZone(zoneName, done).run(function () { return __awaiter(_this, void 0, void 0, function () {
-        var result;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, action()];
-                case 1:
-                    result = _a.sent();
-                    done();
-                    return [2 /*return*/, result];
-            }
+    createZone(zoneName, done).run(function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, action()];
+                    case 1:
+                        result = _a.sent();
+                        done();
+                        return [2 /*return*/, result];
+                }
+            });
         });
-    }); });
+    });
 }
 function $beforeEach(action, timeout) {
     beforeEach(function (done) {
