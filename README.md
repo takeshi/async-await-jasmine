@@ -32,7 +32,7 @@ async function async_error(msg: string) {
 
 
 ## Motivation
-Jasmine's async programing paradime is that assetion code call done method if it have done.
+Jasmine's async programing paradigm is that assertion code call done method if it have done.
 But in the case using async await,
 assertion code throw exception when promise is rejected.
 So it don't call done method.
@@ -66,5 +66,5 @@ async function async_error(msg: string) {
 async-await-jasmine uses [zone.js](https://github.com/angular/zone.js/).
 
 zone.js can handle async error even if code is in zone. 
-so when assetion code throw exception, async-await-jasmine automatically call fail and done metod.
+so when assertion code throw exception, async-await-jasmine automatically call fail and done metod.
 Then we need not wait timeout and we get error message.

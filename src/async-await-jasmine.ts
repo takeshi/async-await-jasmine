@@ -1,4 +1,4 @@
-require("zone.js");
+import 'zone.js';
 
 function createZone(zoneName: string, done: () => void) {
     return Zone.current.fork({
