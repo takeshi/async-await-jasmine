@@ -1,21 +1,22 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t;
-    return { next: verb(0), "throw": verb(1), "return": verb(2) };
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
                 case 0: case 1: t = op; break;
                 case 4: _.label++; return { value: op[1], done: false };
@@ -35,6 +36,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.$beforeEach = $beforeEach;
+exports.$beforeAll = $beforeAll;
+exports.$afterEach = $afterEach;
+exports.$afterAll = $afterAll;
+exports.$it = $it;
 require("zone.js");
 function createZone(zoneName, done) {
     return Zone.current.fork({
@@ -47,47 +53,43 @@ function createZone(zoneName, done) {
     });
 }
 function inZone(done, zoneName, action) {
-    var _this = this;
-    createZone(zoneName, done).run(function () { return __awaiter(_this, void 0, void 0, function () {
-        var result;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, action()];
-                case 1:
-                    result = _a.sent();
-                    done();
-                    return [2 /*return*/, result];
-            }
+    createZone(zoneName, done).run(function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, action()];
+                    case 1:
+                        result = _a.sent();
+                        done();
+                        return [2 /*return*/, result];
+                }
+            });
         });
-    }); });
+    });
 }
 function $beforeEach(action, timeout) {
     beforeEach(function (done) {
         inZone(done, "beforeEach", action);
     }, timeout);
 }
-exports.$beforeEach = $beforeEach;
 function $beforeAll(action, timeout) {
     beforeAll(function (done) {
-        inZone(done, "beforeEach", action);
+        inZone(done, "beforeAll", action);
     }, timeout);
 }
-exports.$beforeAll = $beforeAll;
 function $afterEach(action, timeout) {
     afterEach(function (done) {
-        inZone(done, "beforeEach", action);
+        inZone(done, "afterEach", action);
     }, timeout);
 }
-exports.$afterEach = $afterEach;
 function $afterAll(action, timeout) {
     afterAll(function (done) {
-        inZone(done, "beforeEach", action);
+        inZone(done, "afterAll", action);
     }, timeout);
 }
-exports.$afterAll = $afterAll;
 function $it(expectation, assertion, timeout) {
     it(expectation, function (done) {
         inZone(done, expectation, assertion);
     }, timeout);
 }
-exports.$it = $it;
